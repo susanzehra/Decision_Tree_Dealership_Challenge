@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive decision-tree learning game by Susan Zehra.">
+  <title>Susan Zehra's Decision Tree Dealership Challenge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="welcome" class="overlay">
+    <form id="welcomeForm" class="welcome-card">
+      <div class="brand-mark">SZ</div>
+      <p class="eyebrow">Interactive AI Learning Experience</p>
+      <h1>Susan Zehra's<br>Decision Tree Dealership Challenge</h1>
+      <p>You are the dealership's new AI analyst. Complete six missions to build a system that predicts whether a vehicle will be profitable.</p>
+      <label for="studentName">Your name</label>
+      <input id="studentName" maxlength="60" autocomplete="name" required placeholder="Enter your name">
+      <p class="privacy">Your name is used only on the certificate. Nothing is stored or transmitted.</p>
+      <button class="primary" type="submit">Enter the Dealership</button>
+    </form>
+  </div>
+
+  <header class="topbar">
+    <div><span class="logo">SZ</span><strong>Decision Tree Dealership</strong></div>
+    <div class="top-actions"><span id="playerLabel"></span><button id="resetBtn" class="ghost">Start Over</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Your mission</p>
+        <h1>Turn vehicle records into smart, explainable decisions.</h1>
+        <p>Inspect the data, choose useful splits, assemble a tree, and guide new vehicles to a prediction.</p>
+      </div>
+      <div class="hero-scene" aria-hidden="true">
+        <div class="showroom"><div class="car car-a"></div><div class="car car-b"></div><div class="tree-icon">🌳</div></div>
+      </div>
+    </section>
+
+    <nav id="missionNav" class="mission-nav" aria-label="Mission progress"></nav>
+    <section class="progress-wrap"><div id="progressBar" class="progress-bar"></div></section>
+    <section id="game" class="game-card" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2026 Susan Zehra. All rights reserved.</p>
+    <p>This source code may not be copied, modified, distributed, published, or reused without prior written permission.</p>
+  </footer>
+
+  <template id="certificateTemplate">
+    <section class="certificate">
+      <div class="cert-border">
+        <div class="brand-mark">SZ</div>
+        <p class="eyebrow">Certificate of Completion</p>
+        <h1>Susan Zehra's Decision Tree Dealership Challenge</h1>
+        <p>This certifies that</p>
+        <h2 id="certName"></h2>
+        <p>successfully completed all decision-tree missions and the final dealership challenge.</p>
+        <div class="cert-stats"><span>6 missions completed</span><span>Final challenge passed</span></div>
+        <p id="certDate"></p>
+        <p class="signature">Susan Zehra</p>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
